@@ -130,5 +130,34 @@ namespace HairSalon.Models
       }
     }
 
+    public static void ClearAll()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM clients;";
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
+
+    public override bool Equals(System.Object otherClient)
+    {
+      if (!(otherClient is Client))
+      {
+        return false;
+      }
+      else
+      {
+        Client newClient = (Client) otherClient;
+        bool idEquality = this.GetId().Equals(newClient.GetId());
+        bool StylistNameEquality = this.GetStylistName().Equals(newClient.GetStylistName());
+        return (idEquality && StylistNameEquality);
+      }
+    }    
+
   }
 }
