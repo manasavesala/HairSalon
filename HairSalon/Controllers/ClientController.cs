@@ -4,12 +4,37 @@ using HairSalon.Models;
 
 namespace HairSalon.Controllers
 {
-    public class ClientController : Controller
+  public class ClientController : Controller
+  {
+  
+    [HttpGet("/clients")]
+    public ActionResult Index()
     {
-      [HttpGet("/clients")]
-      public ActionResult Index()
-      {
-        return View();
-      }
+      List<Client> allClients = Client.GetAll();
+      return View(allClients);
     }
+
+    [HttpGet("/clients/new")]
+    public ActionResult New()
+    { 
+      return View();
+    }
+
+    [HttpPost("/clients/new")]
+    public ActionResult Create(string name, string phonenumber, string stylistName)
+    {
+      Client newClient = new Client( name, phonenumber, stylistName);
+      newClient.Save();
+      List<Client> allClients = Client.GetAll();  
+      return View("Index", allClients);
+    }   
+
+    [HttpGet("/clients/{id}")]
+    public ActionResult Show(int id)
+    {
+      Client currentClient = Client.Find(id);  
+      return View(currentClient);
+    }
+
+  }
 }
