@@ -21,9 +21,9 @@ namespace HairSalon.Controllers
     }
 
     [HttpPost("/clients/new")]
-    public ActionResult Create(string name, string phonenumber, string stylistName)
+    public ActionResult Create(string name, string stylistName)
     {
-      Client newClient = new Client( name, phonenumber, stylistName);
+      Client newClient = new Client( name, stylistName);
       newClient.Save();
       List<Client> allClients = Client.GetAll();  
       return View("Index", allClients);

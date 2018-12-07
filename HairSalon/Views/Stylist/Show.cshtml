@@ -1,12 +1,18 @@
-@{
-  Layout = "_Layout";
+
+<h3>Here are all the clients for this stylist:</h3>
+
+@if (@Model["clients"].Count == 0)
+{
+  <h3>No clients have been found for this stylist!</h3>
 }
 
-<div class="container">
-<h1>Stylist Details</h1>
-    <h3>Name: @Model.GetStylistName()</h3>
-    <h3>Location: @Model.GetLocation()</h3>
-    <h3>Rating: @Model.GetRating()</h3>
-    <br>
-    <h3><a href="/stylists">Back to Stylists List</a></h3>
-</div>
+<ol>
+@foreach (var client in @Model["clients"])
+{
+  <li>
+    <h2>@client.GetName()</h2>
+  </li>
+}
+</ol>
+
+<h3><a href = "/stylists">Return to stylists List</a></h3>
