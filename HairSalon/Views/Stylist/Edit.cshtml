@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+<h2 class="text-center">Edit Stylist</h2>
+<div class="container">
+
+
+    <form action="/stylists/@Model.GetId()/edit" method="post">
+        <label for="name"> Name: </label>
+        <input type="text" name="name"><br>
+        <label for="location">Location: </label>
+        <input type="text" name="location"><br>
+        <label for="rating">Rating: </label>
+        <input type="text" name="rating"><br>
+        <button type="submit" class="btn btn-lg btn-primary">Edit</button>
+    </form>
+<h3><a href = "/stylists">Return to stylists List</a></h3>
+    
+</div>

@@ -52,7 +52,23 @@ namespace HairSalon.Controllers
         Stylist.DeleteStylist(id);
         List<Stylist> allStylists = Stylist.GetAll();
         return View("Index",allStylists);
-      }           
+      }  
 
-    }
+      [HttpGet("stylists/{id}/edit")]
+      public ActionResult Edit(int id)
+      {
+        Stylist currentStylist = Stylist.Find(id);  
+        return View(currentStylist);
+      }
+
+      [HttpPost("/stylists/{id}/edit")]
+      public ActionResult Update(string name,string location, string rating,int id)
+      {
+        Stylist stylist = Stylist.Find(id);
+        stylist.Edit(name, location,rating);
+        List<Stylist> allStylists = Stylist.GetAll();
+        return View("Index", allStylists);
+      }               
+
+  }
 }
