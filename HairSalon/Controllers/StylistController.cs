@@ -26,6 +26,14 @@ namespace HairSalon.Controllers
         newStylist.Save();
         List<Stylist> allStylists = Stylist.GetAll();  
         return View("Index", allStylists);
-      }      
+      }   
+
+      [HttpGet("/stylists/{id}")]
+      public ActionResult Show(int id)
+      {
+        Stylist currentStylist = Stylist.Find(id);  
+        return View(currentStylist);
+      }
+
     }
 }
