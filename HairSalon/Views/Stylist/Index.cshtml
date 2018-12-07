@@ -1,7 +1,7 @@
 @{
   Layout = "_Layout";
 }
-<div class="container">
+<div class="container text-center">
     <h1>Stylists List</h1>
     <h4>To see the clients select the stylist</h4>
 
@@ -13,10 +13,10 @@
     @foreach (var Stylists in Model)
     {
     <h3><a href='/stylists/@Stylists.GetId()'>@Stylists.GetStylistName() </a></h3>
-    <h3><a href='/stylists/@Stylists.GetId()/details'>Stylist Details</a></h3>
-    <h3><a href='/stylists/@Stylists.GetId()/delete'>Delete Stylist</a></h3>
-    <h3><a href='/stylists/@Stylists.GetId()/edit'>Edit Stylist Details</a></h3>
-    <h3><a href="/clients/new">Add new Client</a></h3>
+    <button class="btn btn-success btn-outline-dark"><a href='/stylists/@Stylists.GetId()/details'>Stylist Details</a></button>
+    <button class="btn btn-danger btn-outline-dark"><a href='/stylists/@Stylists.GetId()/delete'>Delete Stylist</a></button>
+    <button class="btn btn-warning btn-outline-dark"><a href='/stylists/@Stylists.GetId()/edit'>Edit Stylist Details</a></button>
+    <button class="btn btn-info btn-outline-dark"><a href="/clients/new">Add new Client</a></button>
     
     <br>
 
