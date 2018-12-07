@@ -28,16 +28,31 @@ namespace HairSalon.Controllers
         return View("Index", allStylists);
       }   
 
+      [HttpGet("/stylists/{id}/details")]
+      public ActionResult Details(int id)
+      {
+        Stylist currentStylist = Stylist.Find(id);  
+        return View(currentStylist);
+      }
+
       [HttpGet("/stylists/{id}")]
       public ActionResult Show(int id)
       { 
-      Dictionary<string, object> model = new Dictionary<string, object>();
-      Stylist selectedStylist = Stylist.Find(id);
-      List<Client> StylistClients = selectedStylist.GetClients();
-      model.Add("stylist", selectedStylist);
-      model.Add("clients", StylistClients);
-      return View(model);
-      }      
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        Stylist selectedStylist = Stylist.Find(id);
+        List<Client> StylistClients = selectedStylist.GetClients();
+        model.Add("stylist", selectedStylist);
+        model.Add("clients", StylistClients);
+        return View(model);
+      } 
+
+      [HttpGet("/stylists/{id}/delete")]
+      public ActionResult Delete(int id)
+      {
+        Stylist.DeleteStylist(id);
+        List<Stylist> allStylists = Stylist.GetAll();
+        return View("Index",allStylists);
+      }           
 
     }
 }

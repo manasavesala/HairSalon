@@ -133,7 +133,7 @@ namespace HairSalon.Models
       stylistName.ParameterName = "@stylistName";
       stylistName.Value = this._stylistName;
       cmd.Parameters.Add(stylistName);
-      
+
       var rdr = cmd.ExecuteReader() as MySqlDataReader;
       while(rdr.Read())
       {
@@ -149,7 +149,25 @@ namespace HairSalon.Models
         conn.Dispose();
       }
       return allStylistsClients;
-    }    
+    } 
+
+     public static void DeleteStylist(int id)
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM stylists WHERE id = (@thisId);";
+      MySqlParameter thisId = new MySqlParameter();
+      thisId.ParameterName = "@thisId";
+      thisId.Value = id;
+      cmd.Parameters.Add(thisId);
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+       conn.Dispose();
+      } 
+    }      
 
   }
 }
