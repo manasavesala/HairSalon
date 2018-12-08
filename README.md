@@ -6,7 +6,7 @@
 
 ## Description
 
-_MVC web application for a hair salon. where the  owner should be able to add a list of the stylists, and for each stylist, add clients who see that stylist._
+_MVC web application for a hair salon. where the  owner should be able to add a list of the stylists, and for each stylist, add clients who see that stylist and save that data inti database._
 
 ## Specifications
 
@@ -48,8 +48,8 @@ _Contact Manasa Vesala - vesalamanasa@gmail.com_
 * _Git_
 * _GitHub_
 * _MAMP_
-* _CSS_
 * _HTML_
+* _BootStrap_
 
 ### License
 
