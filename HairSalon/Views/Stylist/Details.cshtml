@@ -1,8 +1,19 @@
+@using HairSalon.Models;
+@using System.Collections.Generic;
+
 <div class="container">
 <h1>Stylist Details</h1>
-    <h3>Name: @Model.GetStylistName()</h3>
-    <h3>Location: @Model.GetLocation()</h3>
-    <h3>Rating: @Model.GetRating()</h3>
+    <h3>Name: @Model["stylist"].GetStylistName()</h3>
+    <h3>Location: @Model["stylist"].GetLocation()</h3>
+    <h3>Rating: @Model["stylist"].GetRating()</h3>
+    <h3>Specialities:</h3>
+    <h3>
+    @foreach (Specialty specialty in @Model["specialties"])
+    {
+        <li>@specialty.GetName()</li>
+    }
+    </h3>
     <br>
+
     <h3><a href="/stylists">Back to Stylists List</a></h3>
 </div>
