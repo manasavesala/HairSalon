@@ -1,6 +1,6 @@
-# _Hair Salon_
+# _Hair Salon.Solutions_
 
-#### _MVC web application for Epicodus,C# Week 3 project. 12.07.2018_
+#### _MVC web application for Epicodus,C# Week 4 project. 12.14.2018_
 
 #### By _**Manasa Vesala**_
 
