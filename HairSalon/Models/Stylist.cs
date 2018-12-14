@@ -286,7 +286,7 @@ namespace HairSalon.Models
       return stylistSpecialties;
     }
 
-    public List<Stylist> FindStylistsOfStylist(int specialtyId)
+    public static List<Stylist> FindStylistsOfStylist(int specialtyId)
     {
       List<Stylist> specalityStylists = new List<Stylist> { };
       MySqlConnection conn = DB.Connection();
