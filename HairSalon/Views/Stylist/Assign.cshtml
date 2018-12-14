@@ -1,7 +1,9 @@
 @using HairSalon.Models;
 @using System.Collections.Generic;
-
-<h3>Assign specialty to a stylists</h3>
+@{
+  Layout = "_Layout";
+}
+<h3>Assign specialty and  stylists</h3>
 <form action="/stylists/assign" method="post">
     <select name="stylist">
         @if (@Model.Count != 0)
