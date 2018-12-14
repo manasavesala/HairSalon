@@ -10,7 +10,7 @@
 @foreach (var client in @Model["clients"])
 {
   <li>
-    <h2>@client.GetName()</h2>
+    <h2>@client.GetName()|| <a href="/clients/@client.GetId()/delete">Delete Client</a></h2>
   </li>
 }
 </ol>

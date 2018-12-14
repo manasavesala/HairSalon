@@ -12,7 +12,8 @@
     @foreach (var Clients in Model)
     {
     <h3><a href='/clients/@Clients.GetId()'>@Clients.GetName()</a></h3>
-    <button class="btn btn-danger btn-outline-dark"><a href='/clients/@Clients.GetId()/delete'>Delete Client</a></button>
+    <button class="btn btn-success"><a href='/clients/@Clients.GetId()/edit'>Edit Client</a></button>
+    <button class="btn btn-danger"><a href='/clients/@Clients.GetId()/delete'>Delete Client</a></button>
     <br>
     
     }

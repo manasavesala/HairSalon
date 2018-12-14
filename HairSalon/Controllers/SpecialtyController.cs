@@ -45,5 +45,12 @@ namespace HairSalon.Controllers
   
     }
 
+    [HttpGet("specialty/{id}/stylists")]
+    public ActionResult stylists(int id )
+    {
+      List<Stylist> selectedStylists = Stylist.FindStylistsOfStylist(id);
+      return View("Details",selectedStylists); 
+    }
+
   }
 }
