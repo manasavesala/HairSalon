@@ -68,7 +68,26 @@ namespace HairSalon.Controllers
         stylist.Edit(name, location,rating);
         List<Stylist> allStylists = Stylist.GetAll();
         return View("Index", allStylists);
-      }               
+      }   
+
+      [HttpGet("/stylists/assign")]
+      public ActionResult Assign()
+      {
+          Dictionary<string, object> model = new Dictionary<string, object> { };
+          List<Stylist> allStylists = Stylist.GetAll();
+          List<Specialty> allSpecialties = Specialty.GetAll();
+          model.Add("stylists", allStylists);
+          model.Add("Specialties", allSpecialties);
+          return View(model);
+      }
+
+      [HttpPost("/stylists/assign")]
+      public ActionResult Specialize(int specialty, int stylist)
+      {
+        Stylist selectedStylist = Stylist.Find(stylist);
+        selectedStylist.AddSpecialty(specialty, stylist);
+        return View("Assign");
+      }
 
   }
 }

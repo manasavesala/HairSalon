@@ -1,0 +1,33 @@
+@using HairSalon.Models;
+@using System.Collections.Generic;
+
+<h3>Assign specialty to a stylists</h3>
+<form action="/stylists/assign" method="post">
+    <select name="stylist">
+        @if (@Model.Count != 0)
+        {
+            @foreach(Stylist stylist in @Model["stylists"])
+            {
+                <option name="stylist" value=@stylist.GetId()>@stylist.GetStylistName()</option>
+            }
+        }
+        else
+        {
+            <option>No stylists in database</option>
+        }
+    </select><br>
+    <select name="specialty">
+        @if (@Model.Count != 0)
+        {
+            @foreach(Specialty specialty in @Model["Specialties"])
+            {
+                <option name="specialty" value=@specialty.GetId()>@specialty.GetName()</option>
+            }
+        }
+        else
+        {
+            <option>No specialty in Database</option>
+        }
+    </select><br><br>
+    <button id="assignButton"class="btn btn-primary btn-lg" type="submit">Assign</button>
+</form>
