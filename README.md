@@ -6,18 +6,24 @@
 
 ## Description
 
-_MVC web application for a hair salon. where the  owner should be able to add a list of the stylists, and for each stylist, add clients who see that stylist and save that data inti database._
+_MVC web application for a hair salon. where the  owner should be able to add a list of the stylists, and for each stylist, add clients who see that stylist and view/add speciality and save that data into database._
 
 ## Specifications
 
 _For HairSalon_
 
-* _Homepage consints of View Stylist and View Clients List._
+* _Homepage consints of View Stylist, View Clients List, view Specialty list and Assign stylist to specialty ._
 * _when you click on View Stylist it takes to new page to view Lists of Stylists._
 * _In the Styist page user can add, delete or update the Stylists._ 
 * _If you click on Stylists you can see all the clients for that Stylist._
 * _If you click on view Clients in the Homepage it takes to lists of clients page._
 * _you can add or delete the clients only on the Stylists page._
+* _If you click on View Specialty you can see all the specialties listed.In that you can add Specialty._
+* _You can delete and update clients informationas well_
+* _For a specific stylist you can view all his specialities by clicking on the View Specialties link in List of stylist page._
+* _For a specific specality you can view all the stylists by clicking on the View stylists link in List of stylist page._
+* _You can delete specialty if you like._
+
 
 ## Setup/Installation Requirements
 
