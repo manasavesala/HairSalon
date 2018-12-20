@@ -23,7 +23,8 @@ _For HairSalon_
 * _For a specific stylist you can view all his specialities by clicking on the View Specialties link in List of stylist page._
 * _For a specific specality you can view all the stylists by clicking on the View stylists link in List of stylist page._
 * _You can delete specialty if you like._
-
+* _You can delete all Stylists if you like._
+* _You can delete all the clients if you like._
 
 ## Setup/Installation Requirements
 
