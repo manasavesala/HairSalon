@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Dec 14, 2018 at 11:58 PM
+-- Generation Time: Dec 20, 2018 at 07:35 AM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.2.1
 
@@ -41,12 +41,10 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`name`, `stylistName`, `id`) VALUES
-('swathi sree', 'john', 3),
-('shilpa', 'swathi', 4),
-('sindhu', 'deepica', 5),
-('murali', 'swathi', 6),
-('Manasa', 'vamshi', 7),
-('swathi', 'john', 11);
+('Manasa', 'deepica', 12),
+('swathi', 'deepica', 13),
+('murali', 'john', 14),
+('sindhu', 'john', 15);
 
 -- --------------------------------------------------------
 
@@ -87,9 +85,8 @@ CREATE TABLE `stylists` (
 --
 
 INSERT INTO `stylists` (`stylistName`, `location`, `rating`, `id`) VALUES
-('John', 'seattle', '5 stars', 1),
-('swathi', 'redmond', '4.5 stars', 2),
-('vamshi', 'tacoma', '4.5 stars', 4);
+('deepica', 'seattle', '4.5 stars', 5),
+('john', 'tacoma', '5 stars', 6);
 
 -- --------------------------------------------------------
 
@@ -155,22 +152,22 @@ ALTER TABLE `stylists_specialties`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `specialties`
 --
 ALTER TABLE `specialties`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `stylists`
 --
 ALTER TABLE `stylists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `stylists_specialties`
 --
 ALTER TABLE `stylists_specialties`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
